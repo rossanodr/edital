@@ -63,7 +63,7 @@
 
 html, body {
   margin: 0;
-  overflow: hidden;
+  overflow: unset;
 }
 
 html,
@@ -79,7 +79,7 @@ body,
 
 .diagram {
   overflow: auto;
-  background: #333;
+  background: #ededed;
 }
 
 .main-area {
@@ -140,7 +140,7 @@ p {
   position: relative;
   border-radius: 3px;
   box-shadow: 4px 4px 8px -8px black;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid #ddd;
   z-index: 10 !important;
   margin: 1px;
   display: flex;
@@ -346,7 +346,7 @@ path {
 }
 
 .t a.gr {
-  background: #404040;
+  background: #ededed;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -363,8 +363,8 @@ path {
   overflow: auto;
   min-height: auto;
   min-width: auto;
-  color: #fff;
-  background: #404040;
+  color: #555;
+  background: #fff;
   user-select: none;
   flex-grow: 1;
   cursor: pointer;
@@ -374,7 +374,7 @@ path {
   margin-top: 20px;
   grid-column: span 4;
   padding: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);  
 }
 
 .im-n-text {
@@ -420,7 +420,7 @@ path {
   margin-top: 5px;
   padding-top: 5px;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
-  color: #ccc;
+  color: #393939;
 }
 
 .im-table-descriptions-displayed {
@@ -446,7 +446,7 @@ path {
   font-family: "Courier New", Courier, monospace;
   overflow: auto;
   margin: 0;
-  color: beige;
+  color:#393939;
 }
 
 .dCols-desc-nowrap pre {
@@ -499,6 +499,7 @@ pre.im-n-text {
   margin-right: 0;
   font-size: 12px;
   min-height: 17px;
+  color: #555;
 }
 
 .dItem {
@@ -517,7 +518,7 @@ pre.im-n-text {
 
 .dCol:nth-of-type(3) {
   font-style: italic;
-  color: #ddd;
+  color: #666;
   padding-left: 4px;
   padding-right: 10px;
   text-align: right;
@@ -538,10 +539,12 @@ pre.im-n-text {
 .sel-item-diagram,
 .sel-item-diagram-multi,
 .sel-item-diagram:hover {
+  box-shadow: 0 0 5px 1px #eee;
   z-index: 100;
-  outline: none;
+  box-shadow: 0 0 8px -2px #666;
+  outline: 2px solid #2196f3;
   outline-offset: 0px;
-  border: 1px solid transparent;
+  border: 1px solid #fff;
 }
 
 .res {
@@ -567,35 +570,35 @@ path {
 }
 
 circle.relationCardinality {
-  fill: #585858;
-  stroke: #ddd;
+  fill: #fff;
+  stroke: #000;
   stroke-width: 1;
 }
 
 #svgMain {
   position: absolute;
   background: linear-gradient(45deg, #f2f2f2, #ddd, #f2f2f2, #eee);
-  background: #585858;
+  background: #ededed;
   border: 0;
   z-index: 2;
 }
 
 .sel-relation-diagram {
-  stroke: #000;
+  stroke: #2196f3;
 }
 
 .sel-relation-diagram-arrow {
-  fill: #000;
+  fill: #2196f3;
 }
 
 .relation-diagram-bg {
-  stroke: rgba(0, 0, 0, 0.01);
+  stroke: rgba(255, 255, 255, 0.01);
   stroke-width: 5px;
   z-index: 0;
 }
 
 .sel-relation-diagram-bg {
-  stroke: #3faaff;
+  stroke: #2196f3;
 }
 
 text,
@@ -615,21 +618,21 @@ tspan {
 
 .rCardinality {
   font-size: 10px;
-  fill: #eee;
-  color: #eee; 
+  fill: #000;
+  color:#000;
 }
 
 .rLineGraphicsCaption {
   font-size: 12px;
-  fill: #eee;
-  color: #eee; 
+  fill: #000;
+  color:#000;
 }
 
 .rCardinalityBg {
   font-size: 10px;
   stroke-width: 4px;
-  fill: #333;
-  stroke:#333;
+  fill: #ededed;
+  stroke: #ededed;
 }
 .im-t-c {
   display: table-cell;
@@ -712,27 +715,27 @@ tspan {
 }
 
 .im-embedded-thin {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.05);
   margin-left: 14px;
   padding-left: 0px;
 }
 
 .im-col-list {
-  color: limegreen;
+  color: darkgreen;
   padding-right: 1px;
   padding-left: 1px;
   font-style: normal;
 }
 
 .im-col-object-left {
-  color: goldenrod;
+  color: darkgoldenrod;
   padding-right: 1px;
   font-style: normal;
   display: inline-block;
 }
 
 .im-col-object-right {
-  color: goldenrod;
+  color: darkgoldenrod;
   padding-left: 1px;
   font-style: normal;
   display: inline-block;
@@ -744,7 +747,7 @@ tspan {
   width: 100px;
   left: 50px;
   top: 50px;
-  border: 2px dotted #ccc;
+  border: 2px dotted #666;
   z-index: 9999;
 }
 
@@ -802,23 +805,22 @@ tspan {
 
 
 .forcedLineColor {
-  stroke: white !important;
+  stroke: black !important;
 }
 
 polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
-  fill: white !important;
+  fill: black !important;
   stroke-width: 0;
 }
 
 .forcedTransparentFill {
-  fill: rgb(51, 51, 51) !important;
+  fill: rgb(238, 238, 238) !important;
 
 }
 
 .im-icon-ResizeBottomRight16 {
   display: none;
 }
-
 .tree__wrapper {
   position: absolute;
   top: 0;
@@ -904,7 +906,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   align-self: center;
   padding: 0;
   border: 1px solid transparent;
-  background: #404040;
+  background: #fff;
   padding: 1px 8px 1px 5px;
   width: max-content;
   min-width: 50px;
@@ -928,7 +930,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   top: 50%;
   height: 50%;
   width: 0;
-  border-left: thin solid #eee;
+  border-left: thin solid #000;
 }
 
 .tree__item:not(.t__tree__item__single__line):last-of-type::before {
@@ -938,7 +940,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   top: 0%;
   height: 50%;
   width: 0;
-  border-left: thin solid #eee;
+  border-left: thin solid #000;
 }
 
 .tree__item.t__tree__item__single__line {
@@ -953,7 +955,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   position: absolute;
   top: 50%;
   left: -21px;
-  border-bottom: thin solid #eee;
+  border-bottom: thin solid #000;
 }
 
 .tree__item__first__line::before {
@@ -963,7 +965,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   position: absolute;
   top: 50%;
   left: -21px;
-  border-top: thin solid #eee;
+  border-top: thin solid #000;
 }
 
 .tree__item__last__line::before {
@@ -973,7 +975,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   position: absolute;
   top: 50%;
   left: -21px;
-  border-top: thin solid #eee;
+  border-top: thin solid #000;
 }
 
 .tree__item__middle__line::before {
@@ -983,7 +985,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   position: absolute;
   top: 50%;
   left: -21px;
-  border-top: thin solid #eee;
+  border-top: thin solid #000;
 }
 
 .t__tree__item__middle__line::before {
@@ -993,14 +995,14 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   top: 0%;
   height: 100%;
   width: 0;
-  border-left: thin solid #eee;
+  border-left: thin solid #000;
 }
 
 .tree__spec {
   white-space: pre-wrap;
   font-style: normal;
-  color: #ccc;
-  background: #333;
+  color: #393939;
+  background: #eee;
   padding: 3px 4px 0px 4px;
   font-size: 10px;
   border-radius: 4px;
@@ -1008,7 +1010,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__prop__key {
-  color: goldenrod;
+  color: darkgoldenrod;
   max-width: 180px;
   text-overflow: ellipsis;
   display: inline-block;
@@ -1019,7 +1021,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__prop__value {
-  color: #ccc;
+  color: #393939;
   max-width: 180px;
   text-overflow: ellipsis;
   display: inline-block;
@@ -1027,7 +1029,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__prop__comment {
-  color: limegreen;
+  color: darkgreen;
   max-width: 180px;
   display: inline-block;
   overflow: hidden;
@@ -1055,11 +1057,11 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   top: 50%;
   left: 100%;
   background: transparent;
-  border-bottom: thin solid #eee;
+  border-bottom: thin solid #000;
 }
 
 .tree__item__bg {
-  background: #404040;
+  background: #fff;
   border: thin dashed rgba(255, 255, 255, 0.2);
   box-shadow: 4px 4px 8px -8px black;
   padding: 3px;
@@ -1101,7 +1103,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   position: relative;
   left: -6px;
   top: 1;
-  background: #404040;
+  background: #fff;
   border-radius: 100%;
   box-shadow: 4px 4px 8px -6px black;
   cursor: pointer;
@@ -1132,7 +1134,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   left: -5px;
   width: 15px;
   height: 15px;
-  color: #404040;
+  color: #fff;
   }
   
   .tree__expander__icon__left i.im-icon-MinusCircle16, .tree__expander__icon__left i.im-icon-PlusCircle16 {
@@ -1140,7 +1142,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   left: -6px;
   background: transparent;
   border-radius: 100%;
-  color: #fff;
+  color: #333;
 }
 
 .tree__flex__rows {
@@ -1177,7 +1179,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__item input, .tree__item__rootbox input {
-  background: #404040;
+  background: #fff;
   border-bottom: 1px solid transparent;
   margin-bottom: 0;
 }
@@ -1201,11 +1203,11 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 .tree__item__req {
   display: inline-block;
   align-self: right;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
   margin: 0 4px;
   padding: 1px 4px 1px 4px;
   border-radius: 4px;
-  color: #eee;
+  color: #000;
 }
 
 .tree__item__last {
@@ -1224,7 +1226,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 
 .tree__required {
-  color: #eee;
+  color: #000;
   padding-right: 2px;
   display: inline-block;
   font-style: normal;
@@ -1236,7 +1238,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   display: grid;
   grid-template-columns: 1fr;
   font-size: 11px;
-  color: #eee;
+  color: #000;
 }
 
 .tree__condition__wrapper .tree__item__inputwrapper {
@@ -1247,7 +1249,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__key__inputwrapper .tree__input {
-  color: #ccc;
+  color: #393939;
 }
 
 .tree__key__inputwrapper {
@@ -1256,7 +1258,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   display: grid;
   grid-template-columns: auto 1fr;
   font-size: 10px;
-  color: #eee;
+  color: #000;
 }
 
 .tree__item__icon {
@@ -1267,7 +1269,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__array {
   font-size: 11px;
-  color: limegreen;
+  color: darkgreen;
   padding-right: 4px;
   padding-left: 1px;
   font-style: normal;
@@ -1275,7 +1277,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__array__mini {
   font-size: 8px;
-  color: limegreen;
+  color: darkgreen;
   padding-right: 2px;
   padding-left: 1px;
   position: relative;
@@ -1293,7 +1295,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__array i.im-icon-DotsVerticallDouble16 {
   font-size: 10px;
-  color: limegreen;
+  color: darkgreen;
   padding: 0;
   position: relative;
   top: 1px;
@@ -1301,7 +1303,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__pattern {
   font-size: 10px;
-  color: #999;
+  color: #666;
   padding-right: 4px;
   font-style: normal;
   display: inline-block;
@@ -1310,7 +1312,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__object {
   font-size: 10px;
-  color: goldenrod;
+  color: darkgoldenrod;
   padding-right: 4px;
   font-style: normal;
   display: inline-block;
@@ -1319,7 +1321,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__object__mini {
   font-size: 8px;
-  color: goldenrod;
+  color: darkgoldenrod;
   padding-right: 2px;
   position: relative;
   bottom: 1px;
@@ -1328,7 +1330,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__object i.im-icon-ArrowLeft16 {
   font-size: 9px;
-  color: goldenrod;
+  color: darkgoldenrod;
   padding: 0;
   position: relative;
   top: 1px;
@@ -1344,7 +1346,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__ref i.im-icon-Table {
   font-size: 9px;
-  color: goldenrod;
+  color: darkgoldenrod;
   padding: 0;
   position: relative;
   top: 1px;
@@ -1352,7 +1354,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__object i.im-icon-Table {
   font-size: 9px;
-  color: #eee;
+  color: #000;
   padding: 0;
   position: relative;
   top: 1px;
@@ -1360,7 +1362,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__icon__object i.im-icon-DotsVerticallDouble16 {
   font-size: 10px;
-  color: goldenrod;
+  color: darkgoldenrod;
   padding: 0;
   position: relative;
   top: 1px;
@@ -1386,7 +1388,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__icon__def {
-  color: goldenrod;
+  color: darkgoldenrod;
   padding-right: 1px;
   font-style: normal;
   display: inline-block;
@@ -1410,7 +1412,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__datatype__name {
-  color: #999;
+  color: #666;
   padding-left: 2px;
   padding-right: 10px;
   text-align: left;
@@ -1419,7 +1421,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__item__index {
-  color: #eee;
+  color: #000;
   opacity: 0.8;
 }
 
@@ -1502,16 +1504,16 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   background-position: -3px center;
   background-repeat: no-repeat;
   background-size: 28px 24px;
-  stroke: #ddd !important;
+  stroke: #000 !important;
   font-size: 10px;
-  color: #ccc;
+  color: #393939;
   box-shadow: 4px 4px 8px -8px black;
 }
 
 .tree__key__text {
-  color: #ccc;
+  color: #393939;
   font-size: 10px;
-  background: #404040;
+  background: #fff;
   border-radius: 8px;
   min-width: 28px;
   padding: 2px 5px 2px 5px;
@@ -1524,7 +1526,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   min-height: 12px;
   padding: 1px 6px 1px 0;
   text-align: center;
-  color: #ccc;
+  color: #393939;
 }
 
 .tree__mini__selected {
@@ -1543,7 +1545,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .im-arrow .tree__mini__clickable:hover, .im-Arrow .tree__mini__clickable:hover {
-  background: #222;
+  background: #2196f3;
   border-radius: 4px;
   position: relative;
   left: -3px;
@@ -1579,19 +1581,19 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__choice__oneOf {
-  background-image: url(oneOf-dark.svg);
+  background-image: url(oneOf-light.svg);
 }
 
 .tree__choice__allOf {
-  background-image: url(allOf-dark.svg);
+  background-image: url(allOf-light.svg);
 }
 
 .tree__choice__anyOf {
-  background-image: url(anyOf-dark.svg);
+  background-image: url(anyOf-light.svg);
 }
 
 .tree__choice__not {
-  background-image: url(not-dark.svg);
+  background-image: url(not-light.svg);
 }
 
 .tree__choice__wrapper {
@@ -1627,17 +1629,17 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 .tree__condition__if {
-  background-image: url(if-dark.svg);
+  background-image: url(if-light.svg);
   color: white;
 }
 
 .tree__condition__then {
-  background-image: url(then-dark.svg);
+  background-image: url(then-light.svg);
   color: white;
 }
 
 .tree__condition__else {
-  background-image: url(else-dark.svg);
+  background-image: url(else-light.svg);
   color: white;
 }
 
@@ -1645,13 +1647,13 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
   border-radius: 11px;
   padding: 0 3px;
   overflow: hidden;
-  background: #404040;
+  background: #fff;
   box-shadow: 4px 4px 8px -8px black;
 }
 
 .tree__condition__text {
   font-size: 10px;
-  background: darkmagenta;
+  background: #A900B1;
   border-radius: 11px;
   min-width: 24px;
   padding: 5px 9px 3px 7px;
@@ -1661,7 +1663,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 
 .tree__condition__text__mini {
   font-size: 10px;
-  background: darkmagenta;
+  background: #A900B1;
   border-radius: 4px;
   min-width: 28px;
   min-height: 12px;
@@ -1672,7 +1674,7 @@ polygon.forcedPolygonFill, circle.forcedPolygonFill, tspan.forcedPolygonFill {
 }
 
 input::placeholder {
-  color: #ccc;
+  color: #999;
   font-style: italic;
   opacity: 0.5;
 }
@@ -1689,7 +1691,7 @@ input::placeholder {
   position: absolute;
   top: 3px;
   left: 5px;
-  color: #eee;
+  color: #000;
   opacity: 0.3;
   font-size: 8px;
   text-transform: uppercase;
@@ -1704,7 +1706,7 @@ input::placeholder {
   position: absolute;
   top: 5px;
   left: 5px;
-  color: #eee;
+  color: #000;
   opacity: 0.3;
   font-size: 8px;
   text-transform: uppercase;
@@ -1717,7 +1719,7 @@ input::placeholder {
   position: absolute;
   top: calc(50% - 0.5px);
   left: 0px;
-  border-top: thin solid #eee;
+  border-top: thin solid #000;
   margin-bottom: 1px;
 }
 
@@ -1726,7 +1728,7 @@ input::placeholder {
   position: absolute;
   top: -15px;
   left: 1px;
-  color: #eee;
+  color: #000;
   opacity: 0.5;
   font-size: 8px;
   text-transform: uppercase;
@@ -1737,7 +1739,7 @@ input::placeholder {
   position: absolute;
   top: -15px;
   left: 1px;
-  color: #eee;
+  color: #000;
   opacity: 0.5;
   font-size: 8px;
   text-transform: uppercase;
@@ -1748,14 +1750,14 @@ input::placeholder {
   position: absolute;
   top: -15px;
   left: 1px;
-  color: #eee;
+  color: #000;
   opacity: 0.5;
   font-size: 8px;
   text-transform: uppercase;
 }
 
 .tree__condition__wrapper .tree__prop__comment {
-  background: #333;
+  background: #ededed;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 3px 7px 2px 4px;
@@ -1794,10 +1796,10 @@ input::placeholder {
   outline: 0;
 }
 
-.sel-item-diagram,  .sel-item-diagram:hover {
+.sel-item-diagram, .sel-item-diagram:hover {
   outline: 0;
   box-shadow: 4px 4px 8px -8px black;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid #ddd;
 }
 
 /**/
@@ -1818,7 +1820,6 @@ input::placeholder {
 .tree__input, .tree__input:focus, .tree__input:focus-visible {
   outline: none;
 }
-
 .tree__empty_decorator {
   display: inline-block;
   min-width: 6px;
@@ -1827,7 +1828,218 @@ input::placeholder {
 .im-text-opacity-50 {
   opacity: 0.4;
 }
+/* print */
+
+.im-content-spacer-lg {
+  height: 25px;
+  display: block;
+}
+
+.im-content-spacer-md {
+  height: 15px;
+  display: block;
+}
+
+.im-content-spacer-sm {
+  height: 10px;
+  display: block;
+}
+
+.mm-d-g-3 .mm-d-v,
+.mm-d-g-5 .mm-d-v {
+  background: #fff;
+  line-height: 16px;
+}
+
+.mm-d-c-c-i {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #333;
+  padding: 3px 7px;
+  display: inline-block;
+  margin: 1px 0 0 0;
+  background: #fff;
+}
+
+.mm-d-c-c-i i {
+  display: none;
+}
+
+.mm-d-g-3 .mm-d-c-c-i {
+  padding: 4px 10px;
+  font-size: 10px;
+}
+
+.mm-d-g-3 .mm-d-v-s {
+  background: #fff;
+}
+
+.mm-title-section {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+  margin-left: 10px;
+}
+
+.mm-subtitle {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  background: rgba(100,100,100,0.1);
+  font-weight: 700;
+  padding: 2px 8px; 
+  margin-bottom: 2px;
+  border-left: 4px solid #000;
+}
+
+.mm-subtitle-col {
+  text-transform: uppercase;
+  margin-top: 21px;
+  font-size: 11px;
+  padding-left: 10px;
+}
+
+.mm-nav-a {
+  text-transform: capitalize;
+}
+
+.im-rel:hover .mm-modified-text {
+  color: #fff !important;
+}
+
+.mm-compare-text {
+  padding: 0 10px;
+  color: #333;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+.mm-author {
+  color: #000;
+  margin: 10px 0;
+}
+
+.mm-section {
+  display: block !important;
+}
+
+#mm-main-navs {
+  display: none !important;
+}
+
+.mm-main-report-area {
+  grid-template-rows: 1fr;
+}
+
+.mm-fullpage-wrapper {
+  max-width: unset;
+  min-width: unset;
+  width: unset;
+  margin: unset;
+}
+
+html,
+body {
+  overflow: unset;
+}
 
 .mm-section-group {
+  border-bottom: 3pt solid black;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px;
+  text-align: center;
+  font-weight: 700;
+  margin: 20px 10px 15px 10px;
+  break-before: page;
+  page-break-before: always;
+}
+
+.mm-header-1, .mm-header-1::after {
+  display: none;
+}
+
+pre {
+  max-width: 100%;
+  flex-grow: 1;
+  overflow: auto;
+  color: #333;
+  font-size: 12px;
+  line-height: 130%;
+  white-space: pre-wrap;
+  background: #fff;
+  border: 1pt solid #666;
+  border-radius: 2px;
+  page-break-inside: avoid;
+}
+
+.mm-d-v-l {    
+  max-width: 100%;
+  padding: 1px 8px 4px 8px;
+}
+
+.mm-d-i {
+  padding: 2px 0;
+}
+
+.mm-subsection {
+  padding: 0;
+  margin-left: 8px;
+  margin-top: 15px;
+}
+
+.mm-d-c {
+  padding: 4px 8px 4px 8px;
+  background: #f2f2f2;
+  border-bottom: 1px solid white;
+  font-weight: 700;
+  border-right: 2px solid white;
+}
+
+.mm-d-v {
+  color: #222;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 300;
+  padding: 1px 8px;
+  align-self: end;  
+  height: auto;
+  margin: 1px 1px 0 1px;
+  min-height: 20px;
+  background: rgba(100,100,100,0.03);
+  line-height: 16px;
+}
+
+.mm-d-v-i {
+  display: block;
+  padding: 0 0 0 8px;
+  font-size: 24px;
+  overflow-wrap: break-word;
+}
+
+.mm-d-v-s {
+  padding-left: 20px;
+}
+
+.mm-d-v a {
+  color: #222;
+  text-decoration: none;
+}
+
+.mm-props {
+  background:#fff;
+  padding: 0 0;
+}
+
+#mm-section-Diagrams {
+  display: none;
+}
+
+.mm-description {
+  color: #444;
+}
+
+img, svg {
   display: none;
 }
