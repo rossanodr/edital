@@ -23,13 +23,10 @@
 .im-code-split pre {
   flex-grow: 1;
   overflow: auto;
-  color: #333;
-  font-size: 12px;
-  line-height: 130%;
+  color: #ddd;
+  font-size: 14px;
+  line-height: 150%;
   white-space: pre-wrap;
-  background: #fff;
-  border: 1pt solid #666;
-  border-radius: 2px;
 }
 
 .im-content-spacer-lg {
@@ -47,76 +44,52 @@
   display: block;
 }
 
-.mm-d-g-3 .mm-d-v,
-.mm-d-g-5 .mm-d-v {
-  background: #fff;
-  line-height: 16px;
-}
-
 .mm-d-c-c-i {
   font-size: 12px;
   text-transform: uppercase;
-  color: #333;
-  padding: 3px 7px;
+  color: #888;
+  padding: 3px 10px;
+  background: rgba(0,0,0,0.25);
   display: inline-block;
-  margin: 1px 0 0 0;
-  background: #fff;
-}
-
-#detail-itm-statistics .mm-d-g-5 {
-  margin: 0 10px;
-  border: 1px solid black;
-  border-radius: 2px;
-}
-
-#detail-itm-statistics .mm-d-g-5 .mm-d-c-c-i {
-  border-bottom: 1px solid black;
-}
-
-.mm-d-c-c-i i {
-  display: none;
+  margin: 1px 1px 0 1px;
 }
 
 .mm-d-g-3 .mm-d-c-c-i {
-  padding: 4px 10px;
+  padding: 4px 7px;
   font-size: 10px;
 }
 
 .mm-d-g-3 .mm-d-v-s {
-  background: #fff;
+  background: rgba(0,0,0,0.25);
 }
 
 .mm-title-section {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #333;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #ddd;
   margin-left: 10px;
 }
 
 .mm-left {
-  color: #000 !important;
-  padding-left: 0;
-  font-weight: 700;
+  border-bottom: 2px solid darkorange;
+  color: darkorange !important;
 }
 
 .mm-left-text {
-  color: #000 !important;
-  font-weight: 700;
+  color: darkorange !important;
 }
 
 .mm-right {
-  color: #000 !important;
-  padding-left: 0;
-  font-weight: 700;
+  border-bottom: 2px solid lightgreen;
+  color: lightgreen !important;
 }
 
 .mm-right-text {
-  color: #000 !important;
-  font-weight: 700;
+  color: lightgreen !important;  
 }
 
 .mm-modified-text {
-  color: #2196f3 !important;
+  color: rgb(3, 169, 244) !important;  
 }
 
 .mm-side-icon {
@@ -135,74 +108,79 @@
 }
 
 .mm-compare-message {
-  margin: 0;
-  margin-left: 10px;
-  padding: 0px;
-  color: #333;
-  font-size: 11px;
+  margin: 10px 0 20px 10px;
+  padding: 10px;
+  color: #ccc;
+  background: rgba(255,255,255,0.05);
+  font-size: 14px;
   font-style: italic;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 3px 6px -6px #000;
 }
 
-.mm-compare-message i {
-  display: none;
+.mm-compare-text {
+  padding: 0 10px;
+  color: #ccc;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+.mm-author {
+  color: #fff;
+  margin: 10px 0;
 }
 
 .mm-nav-a {
   text-transform: capitalize;
 }
 
-.mm-sidenav-item-active .mm-modified-text {
-  color: #000 !important;
+.mm-section-group {
+  display: none;
 }
 
-.im-rel:hover .mm-modified-text {
-  color: #fff !important;
-}
+@media screen and (max-width: 992px) {
+  .mm-section {
+    display: block !important;
+  }
 
-.mm-compare-text {
-  padding: 0 10px;
-  color: #333;
-  font-size: 14px;
-  white-space: pre-wrap;
-}
+  #mm-main-navs {
+    display: none !important;
+  }
 
-.mm-author {
-  color: #000;
-  margin: 10px 0;
-}
+  .mm-main-report-area {
+    grid-template-rows: 1fr;
+  }
 
-.mm-section {
-  display: block !important;
-}
+  .mm-fullpage-wrapper {
+    max-width: unset;
+    min-width: unset;
+    width: unset;
+    margin: unset;
+  }
 
-#mm-main-navs {
-  display: none !important;
-}
+  html,
+  body {
+    overflow: unset;
+  }
 
-.mm-main-report-area {
-  grid-template-rows: 1fr;
-}
+  .mm-section-group,
+  .mm-statistics-group {
+    border-bottom: 2px solid white;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px;
+    text-align: center;
+    font-weight: 700;
+    margin: 10px 10px 5px 10px;
+    color: white;
+  }
 
-.mm-fullpage-wrapper {
-  max-width: unset;
-  min-width: unset;
-  width: unset;
-  margin: unset;
-}
+  .mm-section-active {
+    height: auto;
+  }
 
-html,
-body {
-  overflow: unset;
-}
-
-.mm-section-group,
-.mm-statistics-group {
-  border-bottom: 3pt solid black;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 5px;
-  text-align: center;
-  font-weight: 700;
-  margin: 10px 10px 5px 10px;
+  .mm-section-group {
+    display: block;
+  }
 }
